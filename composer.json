@@ -30,7 +30,7 @@
     ],
     "require": {
         "php" : "^7.0 || ^8.0",
-        "symfony/polyfill-php80": "^1.17"
+        "joyparty/polyfill-php80": "^1.500.1"
     },
     "require-dev": {
         "phpunit/phpunit" : "^6.5.0 || ^7.5.15 || ^8.5 || ^9.3",
@@ -44,11 +44,6 @@
     "autoload-dev": {
         "psr-4": {
             "JoyParty\\UriTemplate\\Tests\\": "tests"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
         }
     },
     "config": {
