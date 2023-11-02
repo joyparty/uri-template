@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace GuzzleHttp\UriTemplate\Tests;
+namespace JoyParty\UriTemplate\Tests;
 
-use GuzzleHttp\UriTemplate\UriTemplate;
+use JoyParty\UriTemplate\UriTemplate;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \GuzzleHttp\UriTemplate\UriTemplate
+ * @covers \JoyParty\UriTemplate\UriTemplate
  */
 final class UriTemplateTest extends TestCase
 {
@@ -118,7 +118,7 @@ final class UriTemplateTest extends TestCase
     /**
      * @dataProvider templateProvider
      */
-    public function testExpandsUriTemplates(string $template, string $expansion, array $variables): void
+    public function testExpandsUriTemplates(string $template, string $expansion, array $variables)
     {
         self::assertSame($expansion, UriTemplate::expand($template, $variables));
     }
@@ -160,7 +160,7 @@ final class UriTemplateTest extends TestCase
     /**
      * @dataProvider expressionProvider
      */
-    public function testParsesExpressions(string $exp, array $data): void
+    public function testParsesExpressions(string $exp, array $data)
     {
         $template = new UriTemplate();
 
@@ -176,7 +176,7 @@ final class UriTemplateTest extends TestCase
     /**
      * @ticket https://github.com/guzzle/guzzle/issues/90
      */
-    public function testAllowsNestedArrayExpansion(): void
+    public function testAllowsNestedArrayExpansion()
     {
         $result = UriTemplate::expand('http://example.com{+path}{/segments}{?query,data*,foo*}', [
             'path'     => '/foo/bar',
@@ -209,7 +209,7 @@ final class UriTemplateTest extends TestCase
     /**
      * @dataProvider specComplianceProvider
      */
-    public function testSpecCompliance(string $template, array $expansions, array $variables): void
+    public function testSpecCompliance(string $template, array $expansions, array $variables)
     {
         self::assertContains(UriTemplate::expand($template, $variables), $expansions);
     }
